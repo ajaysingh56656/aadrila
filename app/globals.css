@@ -2,25 +2,68 @@
 
 :root {
   --background: #ffffff;
+  -header: #ffffff05;
   --foreground: #171717;
+
+  /* Brand Color Variables */
+  --color-brand-blue: #3e6eb4;
+  --color-brand-orange: #cd6028;
+  --color-white-light: #dfeefc;
+  --color-white: #ffffff;
+  --color-black: #141219;
+  --color-black-light: #1e1c26;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@theme {
+  /* Set Manrope as the default sans font for Tailwind utilities */
+  --font-manrope: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+  --font-raleway: var(--font-raleway), ui-serif, Georgia, serif;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* Mapping Brand Colors to Tailwind Utilities */
+  --color-blue: var(--color-brand-blue);
+  --color-orange: var(--color-brand-orange);
+  --color-white-light: var(--color-white-light);
+  --color-black-deep: var(--color-black);
+  --color-black-light: var(--color-black-light);
 }
 
 body {
+  /* Applying your exact requested specs as defaults */
+  font-family: var(--font-manrope), sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+  letter-spacing: 0em; /* 0% is 0em */
+
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-manrope), sans-serif;
+}
+
+/* globals.css */
+.hero-bg {
+  background-image: linear-gradient(to top, #ffffff 0%, transparent 20%),
+    url("/hero.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero-about-bg {
+  background-image: url("/hero-about.jpg");
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  opacity: 0.2;
 }
