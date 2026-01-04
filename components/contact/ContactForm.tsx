@@ -1,11 +1,11 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import Input from "../ui/Input";
 import Button from "../ui/Button";
 
 // Animation variants for form fields
-const formContainerVariants = {
+const formContainerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -16,7 +16,8 @@ const formContainerVariants = {
   },
 };
 
-const fieldVariants = {
+// 2. Add : Variants here
+const fieldVariants: Variants = {
   hidden: { opacity: 0, y: 15 },
   visible: {
     opacity: 1,
@@ -25,7 +26,8 @@ const fieldVariants = {
   },
 };
 
-const buttonVariants = {
+// 3. Add : Variants here
+const buttonVariants: Variants = {
   hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
@@ -78,10 +80,7 @@ export default function ContactForm() {
         </motion.div>
 
         <motion.div variants={buttonVariants}>
-          <motion.div
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-          >
+          <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
             <Button className="w-full" type="submit">
               Send Inquiry
             </Button>

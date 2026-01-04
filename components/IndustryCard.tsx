@@ -12,12 +12,16 @@ interface Props {
 }
 
 // Icon animation variants for scroll sync
-const iconVariants = {
+const iconVariants: Variants = {
   hidden: { scale: 0, rotate: -180 },
   visible: {
     scale: 1,
     rotate: 0,
-    transition: { duration: 0.5, type: "spring", stiffness: 200 },
+    transition: {
+      duration: 0.5,
+      type: "spring", // TypeScript now knows this is a valid spring type
+      stiffness: 200,
+    },
   },
 };
 

@@ -1,5 +1,5 @@
 "use client";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import Image from "next/image";
 import ProductFeature from "./ProductFeature";
 import BackgroundRingSvg from "../svg/BackgroundRingSvg";
@@ -8,7 +8,7 @@ import HeaderText from "../ui/HeaderText";
 import GradientText from "../ui/GradientText";
 
 // Animation variants for scroll sync
-const headerVariants = {
+const headerVariants: Variants = {
   hidden: { opacity: 0, y: -30 },
   visible: {
     opacity: 1,
@@ -17,7 +17,7 @@ const headerVariants = {
   },
 };
 
-const ringVariants = {
+const ringVariants: Variants = {
   hidden: { opacity: 0, scale: 0.8, rotate: -10 },
   visible: {
     opacity: 1,
@@ -27,7 +27,7 @@ const ringVariants = {
   },
 };
 
-const dotVariants = {
+const dotVariants: Variants = {
   hidden: { opacity: 0, scale: 0 },
   visible: {
     opacity: 1,
@@ -36,7 +36,7 @@ const dotVariants = {
   },
 };
 
-const imageVariants = {
+const imageVariants: Variants = {
   hidden: { opacity: 0, x: 100, scale: 0.95 },
   visible: {
     opacity: 1,
@@ -105,7 +105,7 @@ export default function OurProducts() {
           className="relative w-full lg:w-[601px] h-[300px] sm:h-[400px] lg:h-[506px] rounded-[20px] lg:rounded-[40px] overflow-hidden shadow-2xl shadow-blue-900/20"
         >
           <Image
-            src="/out-product.png"
+            src="/product1.png"
             alt="Product Similarity Engine"
             fill
             className="object-cover"

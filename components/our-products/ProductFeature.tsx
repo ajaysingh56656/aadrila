@@ -3,7 +3,7 @@
 import Badge from "../ui/Badge";
 import Button from "../ui/Button";
 import FeatureList from "./FeatureList";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 
 const features = [
   "Detects near-duplicates and tampered documents.",
@@ -16,8 +16,7 @@ const benefits = [
   "Reduce document fraud by up to 40%.",
 ];
 
-// Animation variants for scroll sync
-const containerVariants = {
+const containerVariants: Variants = {
   hidden: { opacity: 0, x: -80 },
   visible: {
     opacity: 1,
@@ -31,7 +30,7 @@ const containerVariants = {
   },
 };
 
-const itemVariants = {
+const itemVariants: Variants = {
   hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
@@ -40,7 +39,7 @@ const itemVariants = {
   },
 };
 
-const badgeVariants = {
+const badgeVariants: Variants = {
   hidden: { opacity: 0, scale: 0.8, x: -30 },
   visible: {
     opacity: 1,
@@ -50,7 +49,7 @@ const badgeVariants = {
   },
 };
 
-const buttonVariants = {
+const buttonVariants: Variants = {
   hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,

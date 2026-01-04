@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import IndustryCard from "./IndustryCard";
 import BackgroundRingSvg from "@/components/svg/BackgroundRingSvg";
 import SmallDotSvg from "@/components/svg/SmallDotSvg";
@@ -12,7 +12,7 @@ import HealthCareSvg from "@/components/svg/HealthCareSvg";
 import LendingSvg from "@/components/svg/LendingSvg";
 
 // Animation variants with smooth transitions for both directions
-const containerVariants = {
+const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -23,7 +23,7 @@ const containerVariants = {
   },
 };
 
-const headerVariants = {
+const headerVariants: Variants = {
   hidden: { opacity: 0, y: 30 },
   visible: {
     opacity: 1,
@@ -32,7 +32,7 @@ const headerVariants = {
   },
 };
 
-const ringVariants = {
+const ringVariants: Variants = {
   hidden: { opacity: 0, scale: 0.8 },
   visible: {
     opacity: 1,
@@ -41,7 +41,7 @@ const ringVariants = {
   },
 };
 
-const cardVariants = {
+const cardVariants: Variants = {
   hidden: { opacity: 0, x: 100 },
   visible: {
     opacity: 1,
@@ -50,7 +50,7 @@ const cardVariants = {
   },
 };
 
-const dotVariants = {
+const dotVariants: Variants = {
   hidden: { opacity: 0, scale: 0.5 },
   visible: {
     opacity: 1,

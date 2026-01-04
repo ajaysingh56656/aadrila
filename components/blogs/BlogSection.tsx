@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import BlogCard from "./BlogCard";
 import { blogData } from "./blogData";
@@ -11,7 +11,7 @@ import BigDotSvg from "../svg/BigDotSvg";
 import SmallDotSvg from "../svg/SmallDotSvg";
 
 // Animation variants for scroll sync
-const headerVariants = {
+const headerVariants: Variants = {
   hidden: { opacity: 0, y: -30 },
   visible: {
     opacity: 1,
@@ -20,16 +20,23 @@ const headerVariants = {
   },
 };
 
-const descriptionVariants = {
-  hidden: { opacity: 0, y: 20 },
+const descriptionVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 20,
+  },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.5, ease: "easeOut", delay: 0.1 },
+    transition: {
+      duration: 0.6,
+      ease: "easeOut",
+      delay: 0.2,
+    },
   },
 };
 
-const dotVariants = {
+const dotVariants: Variants = {
   hidden: { opacity: 0, scale: 0 },
   visible: {
     opacity: 1,
@@ -38,7 +45,7 @@ const dotVariants = {
   },
 };
 
-const cardsContainerVariants = {
+const cardsContainerVariants: Variants = {
   hidden: { opacity: 0, y: 50 },
   visible: {
     opacity: 1,
@@ -47,7 +54,7 @@ const cardsContainerVariants = {
   },
 };
 
-const navVariants = {
+const navVariants: Variants = {
   hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,

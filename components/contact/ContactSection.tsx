@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import LocationPinSvg from "@/components/svg/LocationPinSvg";
 import ContactForm from "./ContactForm";
 import HeaderText from "../ui/HeaderText";
@@ -15,7 +15,7 @@ interface AddressBoxProps {
 }
 
 // Animation variants for scroll sync
-const headerVariants = {
+const headerVariants: Variants = {
   hidden: { opacity: 0, x: -50 },
   visible: {
     opacity: 1,
@@ -24,7 +24,7 @@ const headerVariants = {
   },
 };
 
-const descriptionVariants = {
+const descriptionVariants: Variants = {
   hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
@@ -33,7 +33,7 @@ const descriptionVariants = {
   },
 };
 
-const addressContainerVariants = {
+const addressContainerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -44,7 +44,7 @@ const addressContainerVariants = {
   },
 };
 
-const addressItemVariants = {
+const addressItemVariants: Variants = {
   hidden: { opacity: 0, x: -30 },
   visible: {
     opacity: 1,
@@ -53,7 +53,7 @@ const addressItemVariants = {
   },
 };
 
-const dotVariants = {
+const dotVariants: Variants = {
   hidden: { opacity: 0, scale: 0 },
   visible: {
     opacity: 1,
@@ -62,7 +62,7 @@ const dotVariants = {
   },
 };
 
-const formVariants = {
+const formVariants: Variants = {
   hidden: { opacity: 0, x: 80, scale: 0.95 },
   visible: {
     opacity: 1,
@@ -72,7 +72,7 @@ const formVariants = {
   },
 };
 
-const mobileFormVariants = {
+const mobileFormVariants: Variants = {
   hidden: { opacity: 0, y: 50 },
   visible: {
     opacity: 1,
@@ -81,7 +81,7 @@ const mobileFormVariants = {
   },
 };
 
-const footerVariants = {
+const footerVariants: Variants = {
   hidden: { opacity: 0, y: 30 },
   visible: {
     opacity: 1,
@@ -205,7 +205,10 @@ export default function ContactSection() {
 
 function AddressBox({ heading, subHeading, description }: AddressBoxProps) {
   return (
-    <motion.div variants={addressItemVariants} className="flex gap-4 items-start">
+    <motion.div
+      variants={addressItemVariants}
+      className="flex gap-4 items-start"
+    >
       <div className="flex flex-col">
         {/* Heading: Raleway, Bold, Black Light */}
         <h4 className="font-raleway flex gap-[8px] items-center font-bold text-black-light underline decoration-1 underline-offset-4 mb-[8px] text-[14px] sm:text-[16px]">

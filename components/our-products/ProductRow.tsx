@@ -1,5 +1,5 @@
 "use client";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import Image from "next/image";
 import BackgroundRingSvg from "../svg/BackgroundRingSvg";
 import BigDotSvg from "../svg/BigDotSvg";
@@ -19,7 +19,7 @@ interface ProductProps {
 }
 
 // Animation variants for scroll sync
-const ringVariants = {
+const ringVariants: Variants = {
   hidden: { opacity: 0, scale: 0.8 },
   visible: {
     opacity: 1,
@@ -28,7 +28,7 @@ const ringVariants = {
   },
 };
 
-const dotVariants = {
+const dotVariants: Variants = {
   hidden: { opacity: 0, scale: 0 },
   visible: {
     opacity: 1,
@@ -37,7 +37,7 @@ const dotVariants = {
   },
 };
 
-const itemVariants = {
+const itemVariants: Variants = {
   hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
@@ -46,7 +46,7 @@ const itemVariants = {
   },
 };
 
-const badgeVariants = {
+const badgeVariants: Variants = {
   hidden: { opacity: 0, scale: 0.8 },
   visible: {
     opacity: 1,
@@ -54,7 +54,6 @@ const badgeVariants = {
     transition: { duration: 0.5, ease: "easeOut" },
   },
 };
-
 export default function ProductRow({
   badge,
   title,
@@ -64,7 +63,7 @@ export default function ProductRow({
   reverse = false,
 }: ProductProps) {
   // Dynamic variants based on direction
-  const contentVariants = {
+  const contentVariants: Variants = {
     hidden: { opacity: 0, x: reverse ? 80 : -80 },
     visible: {
       opacity: 1,
@@ -78,7 +77,7 @@ export default function ProductRow({
     },
   };
 
-  const imageVariants = {
+  const imageVariants: Variants = {
     hidden: { opacity: 0, x: reverse ? -80 : 80, scale: 0.95 },
     visible: {
       opacity: 1,
@@ -130,7 +129,7 @@ export default function ProductRow({
         <motion.div variants={badgeVariants}>
           <Badge>{badge}</Badge>
         </motion.div>
-        
+
         <motion.h3
           variants={itemVariants}
           className="font-raleway text-[24px] sm:text-[28px] lg:text-[32px] font-bold text-black-deep mt-[16px] leading-[1.4] lg:leading-[48px]"
@@ -141,7 +140,7 @@ export default function ProductRow({
         <motion.div variants={itemVariants}>
           <FeatureList title="Features:" items={features} />
         </motion.div>
-        
+
         <motion.div variants={itemVariants}>
           <FeatureList title="Benefits:" items={benefits} />
         </motion.div>
